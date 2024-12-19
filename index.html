@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Site Metas -->
+    <title>Koperasi Karyawan_OEY</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      /* CSS untuk section contact */
+      .contact-info {
+        background: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-box h4 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .contact-item {
+        margin-bottom: 15px;
+      }
+
+      .contact-item i {
+        width: 30px;
+        height: 30px;
+        background: #f5f5f5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        color: #333;
+      }
+
+      .contact-item p {
+        font-weight: 600;
+        margin: 5px 0;
+        color: #666;
+      }
+
+      .contact-item a,
+      .contact-item span {
+        color: #777;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .contact-item a:hover {
+        color: #333;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        width: 50px;
+        height: 35px;
+        background: #f5f5f5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: #333;
+        color: #fff;
+      }
+
+      .map-wrapper {
+        height: 100%;
+        min-height: 450px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-wrapper iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .contact-info {
+          margin-bottom: 30px;
+        }
+
+        .map-wrapper {
+          min-height: 300px;
+        }
+      }
+	  /* WhatsApp Button & Form Styles */
+.whatsapp-box {
+    position: fixed;
+    bottom: 70px;
+    right: 8px;
+    z-index: 1000;
+}
+
+.whatsapp-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #25D366;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn i {
+    font-size: 35px;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+}
+
+.whatsapp-form {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: none;
+}
+
+.wa-header {
+    background: #128C7E;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wa-header h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#waForm {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 10px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.send-btn:hover {
+    background: #128C7E;
+}
+
+@media (max-width: 480px) {
+    .whatsapp-form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 320px;
+        margin: 0;
+        bottom: auto;
+        right: auto;
+        z-index: 1001;
+    }
+
+    /* Tambah overlay saat form terbuka */
+    .whatsapp-form::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: -1;
+    }
+
+    /* Perbesar input fields untuk mobile */
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    /* Sesuaikan header di mobile */
+    .wa-header {
+        padding: 12px 15px;
+    }
+
+    .wa-header h4 {
+        font-size: 18px;
+    }
+
+    /* Sesuaikan tombol kirim di mobile */
+    .send-btn {
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    /* Sesuaikan spacing form di mobile */
+    #waForm {
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    /* Perbesar tombol close di mobile */
+    .close-btn {
+        font-size: 28px;
+        padding: 5px;
+    }
+}
+</style>
+    </style>
+  </head>
+  <body id="page-top" class="politics_version">
+    <!-- LOADER -->
+    <div id="preloader">
+      <div id="main-ld">
+        <div id="loader"></div>
+      </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img class="img-fluid" src="images/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Outlet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#blog">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Our Team</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="main-banner parallaxie"
+      style="background: url('uploads/banner-01.jpg')"
+    >
+      <div class="heading">
+        <h1>Koperasi Karyawan OEY</h1>
+        <h3 class="cd-headline clip is-full-width">
+          <span>Menciptakan</span>
+          <span class="cd-words-wrapper">
+            <b class="is-visible"> : </b>
+            <b
+              >kebahagiaan dan <br />
+              kesejahteraan bersama</b
+            >
+            <b
+              >Masa depan <br />
+              lebih baik</b
+            >
+            <b
+              >Fondasi kuat untuk <br />
+              kehidupan lebih baik</b
+            >
+          </span>
+          <div class="btn-ber">
+            <a class="get_btn hvr-bounce-to-top" href="#about">Learn More</a>
+            <a class="learn_btn hvr-bounce-to-top" href="login.html">Login</a>
+          </div>
+        </h3>
+      </div>
+    </section>
+
+    <div id="about" class="section wb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="message-box">
+              <h2>KOPERASI KARYAWAN OEY</h2>
+              <p>
+                Koperasi Karyawan Oey didirikan sebagai wadah kolaborasi dan
+                pemberdayaan bagi seluruh karyawan untuk mencapai kesejahteraan
+                bersama. Berlandaskan prinsip kebersamaan dan solidaritas,
+                koperasi ini hadir untuk menyediakan layanan keuangan,
+                penyediaan kebutuhan sehari-hari, serta berbagai program yang
+                mendukung peningkatan kualitas hidup anggotanya.
+              </p>
+              <p>
+                Sebagai koperasi yang modern dan profesional, kami memanfaatkan
+                teknologi untuk menghadirkan layanan yang mudah diakses,
+                transparan, dan terpercaya. Melalui platform ini, anggota dapat
+                dengan mudah mengakses informasi terkini, mencatat transaksi,
+                serta berpartisipasi aktif dalam kegiatan koperasi.
+              </p>
+
+              <a href="#contact" class="sim-btn hvr-bounce-to-top"
+                ><span>Contact Us</span></a
+              >
+            </div>
+            <!-- end messagebox -->
+          </div>
+          <!-- end col -->
+
+          <div class="col-md-6">
+            <div class="right-box-pro wow fadeIn">
+              <img
+                src="uploads/about_04.jpg"
+                alt=""
+                class="img-fluid img-rounded"
+              />
+            </div>
+            <!-- end media -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section -->
+
+    <div id="services" class="section lb">
+      <div class="container">
+        <div class="section-title text-center">
+          <h3>Cabang_Outlet</h3>
+          <p>Cabang outlet kami tersebar di seluruh Indonesia</p>
+        </div>
+        <!-- end title -->
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Sabang</h2>
+              <p>
+                Jl. H. Agus Salim No.20, RT.2/RW.1, Kb. Sirih, Kec. Menteng,
+                Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10340
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Telkom</h2>
+              <p>
+                Jl. Gatot Subroto No.Kav 52 6, RT.6/RW.1, Kuningan Bar., Kec.
+                Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota
+                Jakarta 12710
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Vimala</h2>
+              <p>
+                Jl. Vimala Hills, Sukamahi, Kec. Megamendung, Kabupaten Bogor,
+                Jawa Barat 16770
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Pekan Baru</h2>
+              <p>
+                Jl. Soekarno Hatta No. 7 A, B, C, RT.002/RW.02, Delima, Kec.
+                Tampan, Kota Pekanbaru, Riau 28289
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Purwokerto</h2>
+              <p>
+                Jl. Jend. Sudirman Timur No.1, Pesuruhan, Berkoh, Kec.
+                Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53146
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Melawai</h2>
+              <p>
+                Bl. M Square, Jl. Melawai IV No.3, Melawai, Kec. Kby. Baru, Kota
+                Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Margonda</h2>
+              <p>
+                Jl. Margonda No.166, Kemiri Muka, Kecamatan Beji, Kota Depok,
+                Jawa Barat 16424
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Botani</h2>
+              <p>
+                Gedung Himpunan Alumni IPB, Jl. Cidangiang No.1, RT.04/RW.05,
+                Tegallega, Bogor Tengah, Bogor City, West Java 16680
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Sentul</h2>
+              <p>
+                Taman Budaya Sentul City, Jl. Siliwangi, Babakan Madang, Sumur
+                Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Lampung</h2>
+              <p>
+                Jl. Wolter Monginsidi No.56, Durian Payung, Kec. Tj. Karang
+                Pusat, Kota Bandar Lampung, Lampung 35214
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+          <div class="col-md-4">
+            <div class="services-inner-box">
+              <div class="ser-icon">
+                <i class="flaticon-development"></i>
+              </div>
+              <h2>Kopi Oey Citra Experience</h2>
+              <p>
+                RT.13/RW.6, Kb. Kosong, Jakarta, Kota Jakarta Pusat, Daerah
+                Khusus Ibukota Jakarta 10630
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section -->
+
+    <div id="blog" class="section lb">
+      <div class="container">
+        <div class="section-title text-center">
+          <h3>Product</h3>
+          <p>
+            Berbagai produk unggulan dengan kualitas terbaik untuk pengalaman
+            yang mengesankan
+          </p>
+        </div>
+        <!-- end title -->
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-lg-4">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img
+                  src="uploads/blog-01.jpg"
+                  class="img-fluid"
+                  alt="post-img"
+                />
+                <div class="date">
+                  <span>Kopi</span>
+                  <span>Oey</span>
+                </div>
+              </div>
+              <div class="post-info">
+                <h4>OEY Coffee Roastery, Since 2020</h4>
+                <ul>
+                  <li>Pesan Produk?</li>
+
+                  <li>
+                    <a href="https://wa.me/62895626314747"
+                      ><b> Klik Disini</b></a
+                    >
+                  </li>
+                </ul>
+                <p>
+                  Kami menyediakan produk kopi fresh roasting menggunakan mesin
+                  roaster modern untuk memastikan kualitas dan cita rasa yang
+                  terbaik, terjaga sampai ke tangan pelanggan. Nikmati kopi segar dari kami untuk pengalaman yang
+                  luar biasa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-lg-4">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img
+                  src="uploads/blog-02.jpg"
+                  class="img-fluid"
+                  alt="post-img"
+                />
+                <div class="date">
+                  <span>Kopi</span>
+                  <span>Oey</span>
+                </div>
+              </div>
+              <div class="post-info">
+                <h4>Produk Frozen Food</h4>
+                <ul>
+                  <li>Pesan Produk?</li>
+
+                  <li>
+                    <a href="https://wa.me/62895626314747"
+                      ><b> Klik Disini</b></a
+                    >
+                  </li>
+                </ul>
+                <p>
+                  Kami menyediakan berbagai produk frozen food seperti singkong,
+                  pisang goreng, bumbu premix nasi goreng, dan sambal. Setiap
+                  produk diproses dengan bahan-bahan pilihan untuk menjaga
+                  kualitas dan cita rasanya. Siap untuk dinikmati kapan saja.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-lg-4">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img
+                  src="uploads/blog-03.jpg"
+                  class="img-fluid"
+                  alt="post-img"
+                />
+                <div class="date">
+                  <span>Kopi</span>
+                  <span>Oey</span>
+                </div>
+              </div>
+              <div class="post-info">
+                <h4>Boengkoesan & Oleh-Oleh</h4>
+                <ul>
+                  <li>Pesan Produk?</li>
+
+                  <li>
+                    <a href="https://wa.me/62895626314747"
+                      ><b> Klik Disini</b></a
+                    >
+                  </li>
+                </ul>
+                <p>
+                  Kami menyediakan produk hampers seperti paket kopi, paket
+                  cokelat, dan paket jamu yang cocok untuk acara-acara seperti
+                  Natal, Lebaran, dan sebagai buah tangan. Setiap hampers berisi
+                  produk pilihan yang memberikan kenangan manis dan istimewa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="team" class="section wb">
+      <div class="container">
+        <div class="section-title text-center">
+          <h3>Our Team</h3>
+          <p>
+            Meet the Faces Behind Our Success
+          </p>
+        </div>
+        <!-- end title -->
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+              <div class="pic">
+                <img src="uploads/img-2.jpg" />
+              </div>
+              <div class="team-content">
+                <h3 class="title">Ms. xxxx</h3>
+                <span class="post">Web Designer</span>
+                <ul class="social">
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                  <li><a href="#" class="fa fa-skype"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+              <div class="pic">
+                <img src="uploads/img-4.jpg" />
+              </div>
+              <div class="team-content">
+                <h3 class="title">Ms. xxxx</h3>
+                <span class="post">Web Designer</span>
+                <ul class="social">
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                  <li><a href="#" class="fa fa-skype"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+              <div class="pic">
+                <img src="uploads/img-1.jpg" />
+              </div>
+              <div class="team-content">
+                <h3 class="title">Mr. xxxx</h3>
+                <span class="post">Web Developer</span>
+                <ul class="social">
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                  <li><a href="#" class="fa fa-skype"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+              <div class="pic">
+                <img src="uploads/img-3.jpg" />
+              </div>
+              <div class="team-content">
+                <h3 class="title">Mr. xxxx</h3>
+                <span class="post">Web Developer</span>
+                <ul class="social">
+                  <li><a href="#" class="fa fa-facebook"></a></li>
+                  <li><a href="#" class="fa fa-twitter"></a></li>
+                  <li><a href="#" class="fa fa-google-plus"></a></li>
+                  <li><a href="#" class="fa fa-skype"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="section db">
+      <div class="container">
+        <div class="section-title text-center">
+          <h3>Contact</h3>
+          <p>Get in touch with us</p>
+        </div>
+        <!-- end title -->
+
+        
+            <div class="row">
+              <div class="col-md-4">
+                <div class="contact-info">
+                  <div class="contact-box">
+                    <h4>Contact Info</h4>
+                    <div class="contact-detail">
+                      <div class="contact-item mb-3">
+                        <i class="fa fa-envelope"></i>
+                        <p>Email:</p>
+                        <a href="mailto:gudangpusat@kopitiamoey.com"
+                          >gudangpusat@kopitiamoey.com</a
+                        >
+                      </div>
+                      <div class="contact-item mb-3">
+                        <i class="fa fa-phone"></i>
+                        <p>Phone:</p>
+                        <a href="tel:+6282279265112">+62 822 7926 5112</a>
+                      </div>
+                      <div class="contact-item mb-4">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Address:</p>
+                        <span
+                          >Kopi Oey Sabang <br>Jl. H. Agus Salim No.20, RT.2/RW.1, <br />Kb. Sirih,
+                          Kec. Menteng, <br />Jakarta Pusat 10340</span
+                        >
+                      </div>
+                    </div>
+
+                    <h4>Follow Us</h4>
+                    <div class="social-links mt-3">
+                      <a
+                        href="https://instagram.com/kopioey"
+                        target="_blank"
+                        class="instagram"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                      <a
+                        href="https://facebook.com/kopioey"
+                        target="_blank"
+                        class="facebook"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                      <a
+                        href="https://youtube.com/kopioey"
+                        target="_blank"
+                        class="youtube"
+                      >
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="map-wrapper">
+					<iframe 
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666466960149!2d106.82130511476886!3d-6.186892395522417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e602d49f%3A0x912db7166dee1631!2sKopi%20Oey%20Sabang!5e0!3m2!1sid!2sid!4v1703044519274!5m2!1sid!2sid"
+						width="100%" 
+						height="450" 
+						style="border:0;" 
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				</div>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section -->
+
+    <div class="copyrights">
+      <div class="container">
+        <div class="footer-distributed">
+          <a href="#"><img src="images/logo.png" alt="" /></a>
+          <div class="footer-center">
+            <p class="footer-links">
+              <a href="#home">Home</a>
+              <a href="#services">Outlet</a>
+              <a href="#about">About</a>
+              <a href="#team">Team</a>
+              <a href="#contact">Contact</a>
+            </p>
+            <div class="footer-content">
+              <span class="copyright">&copy; Kopioey. All Rights Reserved</span>
+              <a
+                href="https://simbahresearch.github.io/development/"
+                target="_blank"
+                class="credit-link"
+              >
+                <span>By : SR</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end copyrights -->
+	 <!-- WhatsApp Button dan Form -->
+<div class="whatsapp-box">
+    <button class="whatsapp-btn" onclick="toggleWhatsAppForm()">
+        <i class="fa fa-whatsapp"></i>
+    </button>
+    
+    <div class="whatsapp-form" id="whatsappForm">
+        <div class="wa-header">
+            <h4>Send WhatsApp Message</h4>
+            <button class="close-btn" onclick="toggleWhatsAppForm()">×</button>
+        </div>
+        <form id="waForm" onsubmit="sendWhatsAppMessage(event)">
+            <div class="form-group">
+                <input type="text" id="waName" placeholder="Your Name *" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="waEmail" placeholder="Your Email *" required>
+            </div>
+            <div class="form-group">
+                <textarea id="waMessage" placeholder="Your Message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="send-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"
+      ><i class="fa fa-angle-up"></i
+    ></a>
+    <script src="js/jquery.vide.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- Camera Slider -->
+    <script src="js/jquery.mobile.customized.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/parallaxie.js"></script>
+    <script src="js/headline.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+	<script>
+		function toggleWhatsAppForm() {
+			const form = document.getElementById('whatsappForm');
+			if(form.style.display === 'none' || !form.style.display) {
+				form.style.display = 'block';
+			} else {
+				form.style.display = 'none';
+			}
+		}
+		
+		function sendWhatsAppMessage(e) {
+			e.preventDefault();
+			
+			const name = document.getElementById('waName').value;
+			const email = document.getElementById('waEmail').value;
+			const message = document.getElementById('waMessage').value;
+			
+			// Format pesan untuk WhatsApp
+			const waMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+			
+			// Nomor WhatsApp yang dituju
+			const phoneNumber = '62895626324747';
+			
+			// Buat URL WhatsApp
+			const waURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${waMessage}`;
+			
+			// Buka WhatsApp di tab baru
+			window.open(waURL, '_blank');
+			
+			// Reset form dan sembunyikan
+			document.getElementById('waForm').reset();
+			document.getElementById('whatsappForm').style.display = 'none';
+		}
+		</script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard KKO</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link href="admin-styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo-container">
+          <img src="logo.png" alt="KKO Logo" />
+        </div>
+        <div class="nav-menu">
+          <div class="nav-item active">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </div>
+          <div class="nav-item"><i class="fas fa-users"></i> Anggota</div>
+          <div class="nav-item dropdown">
+            <i class="fas fa-piggy-bank"></i> Simpanan
+            <div class="dropdown-content">
+              <div class="nav-item">Simpanan Pokok</div>
+              <div class="nav-item">Simpanan Wajib</div>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <i class="fas fa-hand-holding-usd"></i> Pinjaman
+            <div class="dropdown-content">
+              <div class="nav-item">Riwayat Pinjaman</div>
+              <div class="nav-item">Riwayat Pengembalian</div>
+            </div>
+          </div>
+          <div class="nav-item"><i class="fas fa-users"></i> Login Users</div>
+          <div class="nav-item">
+            <i class="fas fa-sign-out-alt"></i> Log Out
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h2>Dashboard</h2>
+          <div class="user-info">
+            <span id="adminEmail"></span>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <h3>Total Simpanan Pokok</h3>
+            <div class="value" id="totalSimpananPokok">Loading...</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Simpanan Wajib</h3>
+            <div class="value" id="totalSimpananWajib">Loading...</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Dipinjamkan</h3>
+            <div class="value" id="totalDipinjamkan">Loading...</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Sales Admin</h3>
+            <div class="value" id="totalSalesAdmin">Loading...</div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." id="searchInput" />
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>ID</th>
+                <th>Simpanan Pokok</th>
+                <th>Simpanan Wajib</th>
+                <th>Pinjaman</th>
+                <th>Tagihan</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Details Modal -->
+    <div id="userModal" class="modal">
+      <div class="modal-content">
+        <span
+          class="close-modal"
+          onclick="document.getElementById('userModal').style.display='none'"
+          >&times;</span
+        >
+        <div id="userModalContent">
+          <!-- Modal content will be populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="admin-script.js"></script>
+  </body>
+</html>
